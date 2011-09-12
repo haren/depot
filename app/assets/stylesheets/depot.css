@@ -111,6 +111,11 @@
   margin-right: 2em;
 }
 
+#store .entry form, #store .entry form div {
+	display: inline;
+}
+
+
 #banner {
 	background: #9c9;
 	padding-top: 10px;
@@ -144,7 +149,7 @@
 }
 #side a {
 	font-size: small;
-	color: #bfb;
+color: #bfb;
 }
 
 #time {
