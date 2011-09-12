@@ -21,7 +21,7 @@
 			<a href="http://www..../contact" >Contact</a><br />
 			<div id ="time">
 				<%= Time.now.strftime("%I:%M%p") %><br/>
-				<%= pluralize(@viewed.to_s, " view") if @viewed > 5 %><br />
+				<%= pluralize(@viewed.to_s, " view") if @viewed and @viewed> 5 %><br />
 			</div>
 		</div>
 		<div id="main" >
