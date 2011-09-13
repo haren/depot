@@ -19,7 +19,11 @@
 <!--			<a href="http://www...." >Home</a><br /> -->
 			<a href="http://www..../faq" >Questions</a><br />
 			<a href="http://www..../news" >News</a><br />
-			<a href="http://www..../contact" >Contact</a><br />
+			<a href="http://www..../contact" >Contact</a><br /><br />
+<!--			<%= link_to 'Your Cart', cart_path(session[:cart_id])%> -->
+			<div id="cart" >
+				<%= render @cart %>
+			</div>
 			<div id ="time">
 				<%= Time.now.strftime("%I:%M%p") %><br/>
 				<%= pluralize(@viewed.to_s, " view") if @viewed and @viewed> 5 %><br />
