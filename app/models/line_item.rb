@@ -5,4 +5,8 @@ class LineItem < ActiveRecord::Base
 	def total_price
 		product.price * quantity
 	end
+
+	def update_quantity
+		update_attribute :quantity, self.quantity - 1
+	end
 end
