@@ -4,6 +4,8 @@ one:
   product: ruby
   cart: one
   price: 20
+  order: one
+
 two:
   product: ruby
   cart: one

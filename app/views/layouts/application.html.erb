@@ -20,9 +20,11 @@
 			<a href="http://www..../faq" >Questions</a><br />
 			<a href="http://www..../news" >News</a><br />
 			<a href="http://www..../contact" >Contact</a><br /><br />
+			<%= link_to 'Orders', orders_path %><br />
+			<%= link_to 'Products', products_path %><br /><br />
 <!--			<%= link_to 'Your Cart', cart_path(session[:cart_id])%> -->
 			<div id="cart" >
-				<%= render @cart %>
+				<%= render @cart if @cart%>
 			</div>
 			<div id ="time">
 				<%= Time.now.strftime("%I:%M%p") %><br/>
@@ -36,3 +38,5 @@
 </body>
 </html>
 
+	
+</div>
