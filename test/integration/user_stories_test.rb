@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class UserStoriesTest < ActionDispatch::IntegrationTest
-  fixtures :prodcuts
+  fixtures :products
 	
 	test "buying a product" do
 		LineItem.delete_all
@@ -24,8 +24,8 @@ class UserStoriesTest < ActionDispatch::IntegrationTest
 
 	post_via_redirect "/orders",
 										:order => { :name => "Dave Thomas",
-																:address => "123 The Street"
-																:email => "dave@example.com"
+																:address => "123 The Street",
+																:email => "dave@example.com",
 																:pay_type => "Check" }
 	assert_response :success
 	assert_template "index"

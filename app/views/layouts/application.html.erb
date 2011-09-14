@@ -16,12 +16,14 @@
 	<div id="columns" >
 		<div id="side" >
 			<%= link_to 'Home', store_index_path %><br /><br />
-<!--			<a href="http://www...." >Home</a><br /> 
-			<a href="http://www..../faq">Questions</a><br />
-			<a href="http://www..../news" >News</a><br />
-			<a href="http://www..../contact" >Contact</a><br /><br />-->
-			<%= link_to 'Orders', orders_path %><br />
-			<%= link_to 'Products', products_path %><br /><br />
+			<% if logged_in? %>
+				<%= link_to 'Orders', orders_path %><br />
+				<%= link_to 'Products', products_path %><br />
+				<%= link_to 'Users', users_path %><br /><br />
+				<%= button_to 'Logout', logout_path, :method => :delete %><br />
+			<% else %>
+				<%= link_to 'Admin panel', login_path %><br /><br />
+			<% end %>
 			<div id="cart" >
 				<%= render @cart if @cart%>
 			</div>

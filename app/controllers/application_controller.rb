@@ -1,5 +1,16 @@
 class ApplicationController < ActionController::Base
+	before_filter :authorize
   protect_from_forgery
+
+	helper_method :logged_in?
+
+	def logged_in?
+		if session[:user_id]
+			return true
+		else
+			return false		
+		end
+	end
 
 	private
 	
@@ -11,4 +22,11 @@ class ApplicationController < ActionController::Base
 		cart
 	end
 
+protected
+
+	def authorize
+		unless User.find_by_id(session[:user_id])
+			redirect_to login_url, :notice => "Please log in"
+		end
+	end
 end
