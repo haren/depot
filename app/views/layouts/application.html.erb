@@ -15,14 +15,13 @@
 	</div>
 	<div id="columns" >
 		<div id="side" >
-			<%= link_to 'Home', store_index_path %><br />
-<!--			<a href="http://www...." >Home</a><br /> -->
-			<a href="http://www..../faq" >Questions</a><br />
+			<%= link_to 'Home', store_index_path %><br /><br />
+<!--			<a href="http://www...." >Home</a><br /> 
+			<a href="http://www..../faq">Questions</a><br />
 			<a href="http://www..../news" >News</a><br />
-			<a href="http://www..../contact" >Contact</a><br /><br />
+			<a href="http://www..../contact" >Contact</a><br /><br />-->
 			<%= link_to 'Orders', orders_path %><br />
 			<%= link_to 'Products', products_path %><br /><br />
-<!--			<%= link_to 'Your Cart', cart_path(session[:cart_id])%> -->
 			<div id="cart" >
 				<%= render @cart if @cart%>
 			</div>
