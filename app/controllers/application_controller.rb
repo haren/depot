@@ -2,15 +2,13 @@ class ApplicationController < ActionController::Base
 	before_filter :authorize
   protect_from_forgery
 
-	helper_method :logged_in?
+#	helper_method :logged_in?
 
-	def logged_in?
-		if session[:user_id]
-			return true
-		else
-			return false		
-		end
-	end
+#	def logged_in?
+#		if session[:user_id]
+#			return true
+#		end
+#	end
 
 	private
 	
