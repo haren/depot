@@ -9,6 +9,10 @@ class Product < ActiveRecord::Base
 	validates :title, :uniqueness => true, :length => {:minimum => 10, :message => 'must be at least 10 characters long'}
 	validates :image_url, :format => {:with	=> %r{\.(gif|jpg|png)$}i,	:message => 'must be a URL for GIF, JPG or PNG image.'}
 
+  def self.find_products_for_sale
+    find(:all, :order => "title", :conditions => {:locale => I18n.locale})
+  end
+
 	private
 	
 	def ensure_not_referenced_by_any_line_item

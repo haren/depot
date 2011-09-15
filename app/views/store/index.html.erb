@@ -4,13 +4,19 @@
 
 <h1><%= t('.title_html') %></h1>
 
-<% @products.each do |product| %>
+<% @products.find_all{|p| p.locale == params[:locale]}.each do |product| %>
 	<div class="entry" >
 		<%= link_to image_tag(product.image_url, :border => 0), line_items_path(:product_id => product) %>
 		<h3><%= product.title %></h3>
 		<%= sanitize(product.description) %>
 		<div class="price_line" >
-			<span class="price" ><%= number_to_currency(product.price) %></span>
+			<span class="price" >
+				<% if params[:locale] == "en" %>
+					<%= number_to_currency(product.price) %>
+				<% else %>
+					<%= number_to_currency(product.price * 0.72) %>
+				<% end %>
+			</span>
 			<%= button_to t('.add_html'), line_items_path(:product_id => product), :disabled => logged_in? %>
 		</div>
 	</div>

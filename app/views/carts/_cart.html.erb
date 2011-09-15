@@ -3,7 +3,13 @@
 	<%= render cart.line_items, :email_being_sent => false %>
 	<tr class="total_line" >
 		<td colspan="2" >Total</td>
-		<td class="total_cell" ><%= number_to_currency(cart.total_price) %></td>
+		<td class="total_cell" >
+		<% if params[:locale] == "en" %>
+			<%= number_to_currency(cart.total_price) %>
+		<% else %>
+			<%= number_to_currency(cart.total_price * 0.72) %>
+		<% end %>
+		</td>
 	</tr>
 </table>
 
