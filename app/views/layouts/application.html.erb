@@ -9,23 +9,35 @@
 
 <body id="store" >
 	<div id="banner" >
+		<%= form_tag store_path, :class => 'locale' do %>
+			<%= select_tag 'set_locale', options_for_select(LANGUAGES, I18n.locale.to_s),
+				:onchange => 'this.form.submit()' %>
+			<div id="to_hide">
+				<%= submit_tag 'submit' %>
+			</div>
+			<%= javascript_tag "document.getElementById('to_hide').style.display = 'none'" %>
+		<% end %>
 		<%= image_tag("logo.png") %>
-		<%= @page_title || "Pragmatic Bookshelf" %>
+		<%= @page_title || t('.title') %>
 	</div>
 	<div id="columns" >
 		<div id="side" >
-			<%= link_to 'Home', store_index_path %><br /><br />
-			<% if session[:user_id] %>
+			<a href="http://www...." ><%= t('.home') %></a><br />
+			<a href="http://www..../faq" ><%= t('.questions') %></a><br />
+			<a href="http://www..../news" ><%= t('.news') %></a><br />
+			<a href="http://www..../contact" ><%= t('.contact') %></a><br /><br />
+			<%= link_to 'Home', store_path %><br /><br />
+			<% if logged_in? %>
 				<%= link_to 'Orders', orders_path %><br />
 				<%= link_to 'Products', products_path %><br />
 				<%= link_to 'Users', users_path %><br /><br />
 				<%= button_to 'Logout', logout_path, :method => :delete %><br />
 			<% else %>
 				<%= link_to 'Admin panel', login_path %><br /><br />
-			<% end %>
 			<div id="cart" >
 				<%= render @cart if @cart%>
 			</div>
+			<% end %>
 			<div id ="time">
 				<%= Time.now.strftime("%I:%M%p") %><br/>
 				<%= pluralize(@viewed.to_s, " view") if @viewed and @viewed> 5 %><br />

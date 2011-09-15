@@ -1,54 +1,54 @@
-en:
+es:
 
   layouts:
     application:
-      title: "Pragmatic Bookshelf"
-      home: "Home"
-      questions: "Questions"
-      news: "News"
-      contact: "Contact"
+      title: "Publicaciones de Pragmatic"
+      home: "Inicio"
+      questions: "Preguntas"
+      news: "Noticias"
+      contact: "Contacto"
 
   store:
     index:
-      title_html: "Your pragmatic catalog"
-      add_html: "Add to cart"
+      title_html: "Su Cat&aacute;logo de Pragmatic"
+      add_html: "A&ntilde;adir al Carrito"
 
   carts:
     cart:
-      title: "Your Cart"
-      empty: "Empty cart"
-      checkout: "Checkout"
+      title: "Carrito de la compra"
+      empty: "Vaciar carrito"
+      checkout: "Comprar"
 
   line_items:
     line_item:
-      remove_html: "Remove item"
+      remove_html: "Quitar art&iacute;culo"
 
   number:
     currency: 
       format:
-        unit: "$"
+        unit: "$US"
         precision: 2
         separator: "."
         delimiter: ","
-        format: "%u%n"
+        format: "%n&nbsp;%u"
 
   orders:
     new:
-      legend: "Please Enter Your Details"
+      legend: "Introduza sus datos, por favor"
     form:
-      name: "Name"
-      address_html: "Address"
+      name: "Nombre"
+      address_html: "Direcci&oacute;n"
       email: "E-mail"
-      pay_type: "Pay with"
-      pay_prompt_html: "Select a payment method"
-      submit: "Place Order"
+      pay_type: "Pagar con"
+      pay_prompt_html: "Seleccione un m&eacute;todo de pago"
+      submit: "Realize Pedido"
+
 
   activerecord:
     errors:
       messages:
         inclusion: "no est&aacute; incluido en la lista"
         blank: "no puede quedar en blanco"
-    errors:
       template:
         body: "Hay problemas con los siguientes campos:"
         header:
@@ -62,3 +62,6 @@ en:
        name: "Nombre"
        email: "E-mail"
        pay_type: "Forma de pago"
+
+  thanks: "Gracias por su pedido"
+
